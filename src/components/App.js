@@ -10,6 +10,10 @@ class Odd extends React.Component {
       </div>
     )
   }
+
+  componentWillUnmount(){
+    console.log('Odd is unmounted');
+  }
 }
 
 class Even extends React.Component {
@@ -20,6 +24,9 @@ class Even extends React.Component {
         I am even
       </div>
     )
+  }
+  componentWillUnmount(){
+    console.log('Even is unmounted');
   }
 }
 class App extends React.Component {
@@ -35,7 +42,6 @@ class App extends React.Component {
     return (
       <div id="main">
         {this.state.even ? <Even /> : <Odd />}
-
         <button id="toggle" onClick={this.handleChange}>Change</button>
       </div>
     )
